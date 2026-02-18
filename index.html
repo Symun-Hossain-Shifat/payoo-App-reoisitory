@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>payoo app</title>
+    <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
+    <!-- link tailwind --> 
+
+     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+
+     <!-- font awesome -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+
+<!-- css style -->
+ <style>
+    *{
+       font-family: "Manrope", sans-serif;
+    }
+ </style>
+</head>
+<body class=" w-[400px] mx-auto bg-gray-50 mt-4 ">
+   <div class="head-container w-[250px] mx-auto pt-25">
+    <img  src="assets/Logo-full.png" alt="">
+   </div>
+   <form class="  pt-6 pb-16">
+    <div class=" mx-auto card bg-base-100 max-w-[350px] shrink-0 shadow-2xl">
+      <div class="card-body">
+        <fieldset class="fieldset space-y-2">
+          <label class="font-bold text-black">Mobile Number</label>
+          <input id="number" class="rounded-full p-2 bg-gray-100 border-0" maxlength="8" minlength="8"  type="number"  placeholder="Enter your Number" />
+          <label class="font-bold text-black">4 Digit pin</label>
+          <input id="pin" type="password" maxlength="4" class=" rounded-full p-2 bg-gray-100 border-0" placeholder="Enter your pin" />
+         
+          <button id="btn" class="btn btn-primary rounded-full">Login</button>
+        </fieldset>
+      </div>
+    </div>
+   </form>
+   <script src="script.js"></script>
+</body>
+
+ 
+</html>
