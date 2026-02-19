@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>payoo app</title>
+    <title>payoo | Home</title>
     <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
     <!-- link tailwind --> 
 
@@ -31,12 +31,12 @@
         <div class="first-container flex gap-4 items-center">
            <div class="w-10"> <img src="assets/logo.png" alt=""></div>
             <div>
-                <h1 class="text-1.5xl font-bold">$45000</h1>
+                <h1 class="text-1.5xl font-bold">$ <span id="balance">45000</span></h1>
                 <p class="text-gray-600 font-semibold text-[15px]">Available Balance</p>
             </div>
         </div>
         <div class="second-container">
-            <button class="btn text-gray-600">
+            <button id="logout" type="button" class="btn text-gray-600">
               <span class="rotate-180 text-gray-600"><i class="fa-solid fa-arrow-right-from-bracket"></i></span>  Log out
             </button>
         </div>
@@ -79,8 +79,8 @@
 
  </section>
 
- <!-- section of points -->
-  <section class="points bg-gray-100 py-10 ">
+ <!-- section of cashout -->
+  <section class="points bg-gray-100 py-10 hidden  ">
     
     <form>
         <h2 class="text-1xl ml-7 mb-4 font-bold">Cashout</h2>
@@ -88,17 +88,64 @@
       <div class="card-body">
         <fieldset class="fieldset space-y-2">
           <label class="font-bold text-black">Agent Number</label>
-          <input id="number" class="rounded-full p-2 bg-gray-100 border-0" maxlength="8" minlength="8"  type="number"  placeholder="Enter your 11 digit Number" />
+          <input id="number" class="rounded-full p-2 bg-gray-100 border-0" maxlength="11" minlength="11"  type="number"  placeholder="Enter your 11 digit Number" />
           <label class="font-bold text-black">Amount</label>
-          <input id="number" class="rounded-full p-2 bg-gray-100 border-0"  type="number"  placeholder="Enter amount to withdraw" />
+          <input id="amount" class="rounded-full p-2 bg-gray-100 border-0"  type="number"  placeholder="Enter amount to withdraw" />
           <label class="font-bold text-black">Pin number</label>
           <input id="pin" type="password" maxlength="4" class=" rounded-full p-2 bg-gray-100 border-0" placeholder="Enter your pin" />
          
-          <button id="btn" class="btn btn-primary rounded-full">Withdraw Money</button>
+          <button id="btn" type="button" class="btn btn-primary rounded-full">Withdraw Money</button>
         </fieldset>
       </div>
     </div>
    </form>
   </section>
+
+<!-- section for add money -->
+ <section class="points bg-gray-100 py-10   ">
+ <form>
+        <h2 class="text-1xl ml-7 mb-4 font-bold">Add money</h2>
+        <div class=" mx-auto card bg-base-100 max-w-[350px] shrink-0 shadow-2xl">
+      <div class="card-body">
+        <fieldset class="fieldset space-y-2">
+          <label class="font-bold text-black"> Select A Bank</label>
+          <select id="Bank" class="rounded-full py-2 bg-gray-100 border-0" >
+          <option disabled selected >Select Bank</option>
+          <option>Dach Bangla Bank</option>
+          <option>UCB Bank</option>
+          <option>City Bank</option>
+          <option>Islami Bank</option>
+          <option>Dhaka Bank</option>
+          </select>
+          <label class="font-bold text-black">Bank Account Number</label>
+          <input id="accountNUmber" class="rounded-full p-2 bg-gray-100 border-0" maxlength="11" minlength="11"  type="number"  placeholder="Enter your 11 digit account Number" />
+          <label class="font-bold text-black">Amount to add</label>
+          <input id="Addamount" class="rounded-full p-2 bg-gray-100 border-0"  type="number"  placeholder="Enter amount to Add" />
+          <label class="font-bold text-black">Pin number</label>
+          <input id="pinforadd" type="password" maxlength="4" class=" rounded-full p-2 bg-gray-100 border-0" placeholder="Enter your pin" />
+         
+          <button id="btnforadd" type="button" class="btn btn-primary rounded-full">Add Money</button>
+        </fieldset>
+      </div>
+    </div>
+   </form>
+ </section>
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- linked with the js file -->
+   <script src="jsFile/machine.js"></script>
+   
+ <script src="jsFile/Addmoney.js"></script>
+  <script src="jsFile/cashout.js"></script>
 </body>
 </html>
