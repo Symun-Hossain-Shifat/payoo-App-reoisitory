@@ -25,9 +25,10 @@
     }
  </style>
 </head>
-<body class=" w-[400px] mx-auto  bg-gray-50 mt-4 ">
+<body class=" w-[400px] mx-auto  bg-gray-100 mt-4 ">
     <!-- section of navigation -->
-    <nav class="flex justify-between px-5 py-2 border-b-2 border-gray-200 ">
+     <header class="sticky top-0 bg-white"> 
+  <nav class="flex justify-between px-5 py-2 border-b-2 border-gray-200 ">
         <div class="first-container flex gap-4 items-center">
            <div class="w-10"> <img src="assets/logo.png" alt=""></div>
             <div>
@@ -41,6 +42,8 @@
             </button>
         </div>
     </nav>
+  </header>
+   
 <!-- section for welcome -->
  <section class=" px-5 py-2 pt-10 ">
 <h1 class=" font-bold text-2xl ">Welcome to Pay<span class="text-primary">oo</span></h1>
@@ -51,28 +54,28 @@
 
  <section class=" px-5 py-6 pt-5 grid grid-cols-3 grid-rows-2 gap-3 ">
     <!-- All cards -->
- <button class=" btn btn-primary btn-outline btn-soft h-full p-2 flex-col space-y-2 ">
+ <button id="addmoney" class=" btn btn-primary btn-outline btn-soft h-full p-2 flex-col space-y-2 ">
  <img class=" mx-auto" src="assets/opt-1.png" alt="">
  <p >Add Money</p>
  </button>
  
- <button class=" btn btn-accent  btn-soft btn-outline h-full p-2 flex-col space-y-2 ">
+ <button id="cashout" class=" btn btn-accent  btn-soft btn-outline h-full p-2 flex-col space-y-2 ">
  <img class=" mx-auto" src="assets/opt-2.png" alt="">
  <p>Cashout</p>
  </button>
- <button class=" btn btn-secondary  btn-soft btn-outline h-full p-2 flex-col space-y-2 ">
+ <button id="transfermoney" class=" btn btn-secondary  btn-soft btn-outline h-full p-2 flex-col space-y-2 ">
  <img class=" mx-auto" src="assets/opt-3.png" alt="">
  <p >Transfer Money</p>
  </button>
- <button class=" btn btn-info  btn-soft btn-outline h-full p-2 flex-col space-y-2 ">
+ <button id="getbonus" class=" btn btn-info  btn-soft btn-outline h-full p-2 flex-col space-y-2 ">
  <img class=" mx-auto" src="assets/opt-4.png" alt="">
  <p >Get Bonus</p>
  </button>
- <button class=" btn btn-success  btn-soft btn-outline h-full p-2 flex-col space-y-2 ">
+ <button id="paybill" class=" btn btn-success  btn-soft btn-outline h-full p-2 flex-col space-y-2 ">
  <img class=" mx-auto" src="assets/opt-5.png" alt="">
  <p >Pay Bill</p>
  </button>
- <button class=" btn btn-warning  btn-soft btn-outline h-full p-2 flex-col space-y-2 ">
+ <button id="transaction" class=" btn btn-warning  btn-soft btn-outline h-full p-2 flex-col space-y-2 ">
  <img class=" mx-auto" src="assets/opt-6.png" alt="">
  <p>Transactions</p>
  </button>
@@ -80,7 +83,7 @@
  </section>
 
  <!-- section of cashout -->
-  <section class="points bg-gray-100 py-10 hidden  ">
+  <section id="secondcashout" class="points bg-gray-100 py-10  hidden ">
     
     <form>
         <h2 class="text-1xl ml-7 mb-4 font-bold">Cashout</h2>
@@ -102,7 +105,7 @@
   </section>
 
 <!-- section for add money -->
- <section class="points bg-gray-100 py-10   ">
+ <section id="fistaddmoney" class="points bg-gray-100 py-10 hidden  ">
  <form>
         <h2 class="text-1xl ml-7 mb-4 font-bold">Add money</h2>
         <div class=" mx-auto card bg-base-100 max-w-[350px] shrink-0 shadow-2xl">
@@ -131,20 +134,175 @@
    </form>
  </section>
 
+<!-- section for transfer money -->
+
+<section id="thirdtransfer" class="points bg-gray-100 py-10 hidden  ">
+<form>
+        <h2 class="text-1xl ml-7 mb-4 font-bold">Transfer Money</h2>
+        <div class=" mx-auto card bg-base-100 max-w-[350px] shrink-0 shadow-2xl">
+      <div class="card-body">
+        <fieldset class="fieldset space-y-2">
+          
+          <label class="font-bold text-black">User Account Number</label>
+          <input id="useraccountNUmber" class="rounded-full p-2 bg-gray-100 border-0" maxlength="11" minlength="11"  type="number"  placeholder="Enter your 11 digit account Number" />
+          <label class="font-bold text-black">Amount </label>
+          <input id="Transferamount" class="rounded-full p-2 bg-gray-100 border-0"  type="number"  placeholder="Enter amount to transfer" />
+          <label class="font-bold text-black">Pin number</label>
+          <input id="pinfortransfer" type="password" maxlength="4" class=" rounded-full p-2 bg-gray-100 border-0" placeholder="Enter 4 digit pin" />
+         
+          <button id="btnfortransfer" type="button" class="btn btn-primary rounded-full">Send Now</button>
+        </fieldset>
+      </div>
+    </div>
+   </form>
+</section>
+
+<!-- get bonus -->
+<section id="fourthbonus" class="points bg-gray-100 py-10 hidden ">
+<form>
+        <h2 class="text-1xl ml-7 mb-4 font-bold">Get Bonus</h2>
+        <div class=" mx-auto card bg-base-100 max-w-[350px] shrink-0 shadow-2xl">
+      <div class="card-body">
+        <fieldset class="fieldset space-y-2">
+          
+         <label class="font-bold text-black">Enter Bonus Coupon</label>
+          <input id="bonus" type="number" class=" rounded-full p-2 bg-gray-100 border-0" placeholder="Enter your coupon" />
+         
+          <button id="btnforbonus" type="button" class="btn btn-primary rounded-full">Get Bonus</button>
+        </fieldset>
+      </div>
+    </div>
+   </form>
+</section>
+
+
+<!-- section for Pay bill -->
+<section id="fivepay" class="points bg-gray-100 py-10 hidden  ">
+<form>
+        <h2 class="text-1xl ml-7 mb-4 font-bold">Add money</h2>
+        <div class=" mx-auto card bg-base-100 max-w-[350px] shrink-0 shadow-2xl">
+      <div class="card-body">
+        <fieldset class="fieldset space-y-2">
+          <label class="font-bold text-black"> Select A Bank</label>
+          <select id="Bankforpay" class="rounded-full py-2 bg-gray-100 border-0" >
+          <option disabled selected >Select Bank</option>
+          <option>Dach Bangla Bank</option>
+          <option>UCB Bank</option>
+          <option>City Bank</option>
+          <option>Islami Bank</option>
+          <option>Dhaka Bank</option>
+          </select>
+          <label class="font-bold text-black">Biller Account Number</label>
+          <input id="accountpay" class="rounded-full p-2 bg-gray-100 border-0" maxlength="11" minlength="11"  type="number"  placeholder="Enter your 11 digit account Number" />
+          <label class="font-bold text-black">Amount to Pay</label>
+          <input id="Pay" class="rounded-full p-2 bg-gray-100 border-0"  type="number"  placeholder="Enter amount to Add" />
+          <label class="font-bold text-black">Pin number</label>
+          <input id="pinforpay" type="password" maxlength="4" class=" rounded-full p-2 bg-gray-100 border-0" placeholder="Enter your pin" />
+         
+          <button id="btnforpay" type="button" class="btn btn-primary rounded-full">Pay Now</button>
+        </fieldset>
+      </div>
+    </div>
+   </form>
+</section>
+
+<!-- section for transiction history -->
+ <section id="sixtransaction" class="points bg-gray-100  mx-5 space-y-6 pb-6 hidden">
+ <div class="flex justify-between items-center">
+  <h1 class="text-1xl font-bold">Transaction History</h1>
+  <p class="text-gray-500">View all</p>
+ </div>
 
 
 
+ <div class="main  flex justify-between items-center p-3 bg-white rounded-md">
+<div class="subcard flex gap-6 items-center  ">
+<div class="w-10  rounded-full bg-gray-200 p-2"><img  src="assets/opt-1.png" alt=""></div>
+<div> <h4 class="text-1xl font-bold">Electricity Bil</h4>
+<p class="text-gray-500 text-[10px]">Today 01:44 AM</p></div>
+</div>
+<div><span><i class="fa-solid fa-ellipsis-vertical"></i></span></div>
+ </div>
+ <div class="main  flex justify-between items-center p-3 bg-white rounded-md">
+<div class="subcard flex gap-6 items-center  ">
+<div class="w-10  rounded-full bg-gray-200 p-2"><img  src="assets/opt-1.png" alt=""></div>
+<div> <h4 class="text-1xl font-bold">Bank Deposit</h4>
+<p class="text-gray-500 text-[10px]">Today 01:44 AM</p></div>
+</div>
+<div><span><i class="fa-solid fa-ellipsis-vertical"></i></span></div>
+ </div>
+ <div class="main  flex justify-between items-center p-3 bg-white rounded-md">
+<div class="subcard flex gap-6 items-center  ">
+<div class="w-10  rounded-full bg-gray-200 p-2"><img  src="assets/opt-1.png" alt=""></div>
+<div> <h4 class="text-1xl font-bold">Mobile Recharge</h4>
+<p class="text-gray-500 text-[10px]">Today 01:44 AM</p></div>
+</div>
+<div><span><i class="fa-solid fa-ellipsis-vertical"></i></span></div>
+ </div>
+
+
+ <div class="main  flex justify-between items-center p-3 bg-white rounded-md">
+<div class="subcard flex gap-6 items-center  ">
+<div class="w-10  rounded-full bg-gray-200 p-2"><img  src="assets/opt-1.png" alt=""></div>
+<div> <h4 class="text-1xl font-bold">Gas Bill</h4>
+<p class="text-gray-500 text-[10px]">Today 01:44 AM</p></div>
+</div>
+<div><span><i class="fa-solid fa-ellipsis-vertical"></i></span></div>
+ </div>
+ </section>
+ <!-- section for orginal page -->
+
+<section id="state" class="points bg-gray-100  mx-5 space-y-6 pb-6 ">
+ <div class="flex justify-between items-center">
+  <h1 class="text-1xl font-bold">Latest Payment</h1>
+  <p class="text-gray-500">View all</p>
+ </div>
 
 
 
+ <div class="main  flex justify-between items-center p-3 bg-white rounded-md">
+<div class="subcard flex gap-6 items-center  ">
+<div class="w-10  rounded-full bg-gray-200 p-2"><img  src="assets/opt-1.png" alt=""></div>
+<div> <h4 class="text-1xl font-bold">Electricity Bil</h4>
+<p class="text-gray-500 text-[10px]">Today 01:44 AM</p></div>
+</div>
+<div><span><i class="fa-solid fa-ellipsis-vertical"></i></span></div>
+ </div>
+ <div class="main  flex justify-between items-center p-3 bg-white rounded-md">
+<div class="subcard flex gap-6 items-center  ">
+<div class="w-10  rounded-full bg-gray-200 p-2"><img  src="assets/opt-1.png" alt=""></div>
+<div> <h4 class="text-1xl font-bold">Bank Deposit</h4>
+<p class="text-gray-500 text-[10px]">Today 01:44 AM</p></div>
+</div>
+<div><span><i class="fa-solid fa-ellipsis-vertical"></i></span></div>
+ </div>
+ <div class="main  flex justify-between items-center p-3 bg-white rounded-md">
+<div class="subcard flex gap-6 items-center  ">
+<div class="w-10  rounded-full bg-gray-200 p-2"><img  src="assets/opt-1.png" alt=""></div>
+<div> <h4 class="text-1xl font-bold">Mobile Recharge</h4>
+<p class="text-gray-500 text-[10px]">Today 01:44 AM</p></div>
+</div>
+<div><span><i class="fa-solid fa-ellipsis-vertical"></i></span></div>
+ </div>
 
 
-
+ <div class="main  flex justify-between items-center p-3 bg-white rounded-md">
+<div class="subcard flex gap-6 items-center  ">
+<div class="w-10  rounded-full bg-gray-200 p-2"><img  src="assets/opt-1.png" alt=""></div>
+<div> <h4 class="text-1xl font-bold">Gas Bill</h4>
+<p class="text-gray-500 text-[10px]">Today 01:44 AM</p></div>
+</div>
+<div><span><i class="fa-solid fa-ellipsis-vertical"></i></span></div>
+ </div>
+ </section>
 
 
   <!-- linked with the js file -->
+
    <script src="jsFile/machine.js"></script>
-   
+   <script src="jsFile/pay.js"></script>
+   <script src="jsFile/bonus.js"></script>
+   <script src="jsFile/transfer.js"></script>
  <script src="jsFile/Addmoney.js"></script>
   <script src="jsFile/cashout.js"></script>
 </body>
